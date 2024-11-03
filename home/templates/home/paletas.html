@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Paletas
+{% endblock title_head %}
+
+{% block h1_header %}
+Listado de Paletas
+{% endblock h1_header %}
+
+{% block main %}
+
+<a href={% url "home:crear_paleta" %}>Crear Paleta</a>
+
+
+<form action={% url "home:paletas" %}>
+    {{form}}
+
+    <input type="submit" value="Buscar">
+</form>
+
+{% if paletas %}
+
+<ul>
+    {% for paleta in paletas %}
+    <li> 
+        |<a href={% url "home:ver_paleta" paleta.id %}>{{paleta}}</a>
+        | <a href={% url "home:editar_paleta" paleta.id %}>Editar</a>
+        | <a href={% url "home:eliminar_paleta" paleta.id %}>Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<p>No hay paletas</p>
+
+{% endif %}
+
+{% endblock main %}

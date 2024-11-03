@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Editar Perfil
+{% endblock title_head %}
+
+{% block h1_header %}Editar Perfil{% endblock h1_header %}
+
+{% block main %}
+
+<form action={% url "home:editar_perfil" %} method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{form}}
+
+    <input type="submit" value="Editar">
+</form>
+{% endblock main %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Editar Paleta
+{% endblock title_head %}
+
+{% block h1_header %}Editar {{paleta.id}}{% endblock h1_header %}
+
+{% block main %}
+
+<form action={% url "home:editar_paleta" paleta.id %} method="post">
+    {% csrf_token %}
+
+    {{form}}
+
+    <input type="submit" value="Editar">
+</form>
+{% endblock main %}

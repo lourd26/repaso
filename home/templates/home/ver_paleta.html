@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Ver Paleta
+{% endblock title_head %}
+
+{% block h1_header %}Paleta {{paleta.id}}{% endblock h1_header %}
+
+{% block main %}
+<ul>
+    <li>Marca: {{paleta.marca}}</li>
+    <li>Anio: {{paleta.anio}}</li>
+    <li>Fecha carga: {{paleta.fecha_carga}}</li>
+</ul>
+{% endblock main %}
